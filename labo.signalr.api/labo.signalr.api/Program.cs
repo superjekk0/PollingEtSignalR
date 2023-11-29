@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using labo.signalr.api.Data;
-using labo.signalr.api.Hubs;
 using labo.signalr.api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,7 +39,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// TODO ajouter l'utilisation de SignalR
 // TODO ajouter l'utilisation des CORS
 
 app.UseAuthorization();
@@ -50,7 +48,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-
+// TODO ajouter la route vers le Hub
 
 app.Run();
 
