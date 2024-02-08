@@ -8,11 +8,11 @@ using labo.signalr.api.Data;
 
 #nullable disable
 
-namespace labo.signalr.api.Data.Migrations
+namespace labo.signalr.api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231128232054_tasks")]
-    partial class tasks
+    [Migration("20240208164039_initiale")]
+    partial class initiale
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -159,11 +159,9 @@ namespace labo.signalr.api.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderDisplayName")
@@ -201,11 +199,9 @@ namespace labo.signalr.api.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Value")

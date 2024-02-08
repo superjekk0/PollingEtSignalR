@@ -1,24 +1,20 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using labo.signalr.api.Data;
-using labo.signalr.api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-// TODO Ajouter la configuration de SignalR
-// TODO Ajouter la configuration des CORS
+// TODO: SignalR: Ajouter la configuration de SignalR
 
-builder.Services.AddScoped<TasksService>();
+// TODO: SignalR: Ajouter la configuration des CORS
 
 var app = builder.Build();
 
@@ -39,7 +35,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// TODO ajouter l'utilisation des CORS
+// TODO: SignalR: ajouter l'utilisation des CORS
 
 app.UseAuthorization();
 
@@ -48,7 +44,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-// TODO ajouter la route vers le Hub
+// TODO: SignalR: ajouter la route vers le Hub
 
 app.Run();
 
