@@ -11,12 +11,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { PollingComponent } from './polling/polling.component';
+import { SignalrComponent } from './signalr/signalr.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [		
+    AppComponent,
+      PollingComponent,
+      SignalrComponent
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -26,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    MatTabsModule,
     FormsModule,
   ],
   providers: [],
