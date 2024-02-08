@@ -12,6 +12,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // TODO: SignalR: Ajouter la configuration de SignalR
 
 // TODO: SignalR: Ajouter la configuration des CORS
@@ -22,6 +25,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+    // Utiliser Swagger
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 else
 {
@@ -42,7 +48,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages();
 
 // TODO: SignalR: ajouter la route vers le Hub
 
