@@ -15,9 +15,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// TODO: SignalR: Ajouter la configuration de SignalR
+// TODO: SignalR: Ajouter SignalR
 
-// TODO: SignalR: Ajouter la configuration des CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder => builder
+        .WithOrigins("http://localhost:4200", "https://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials());
+});
 
 var app = builder.Build();
 
@@ -41,7 +48,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// TODO: SignalR: ajouter l'utilisation des CORS
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
@@ -49,7 +56,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// TODO: SignalR: ajouter la route vers le Hub
+// TODO: SignalR: Ajouter la route vers le Hub
 
 app.Run();
 
