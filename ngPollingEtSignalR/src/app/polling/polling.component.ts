@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UselessTask } from '../models/UselessTask';
 
 @Component({
   selector: 'app-polling',
@@ -8,39 +9,22 @@ import { Component, OnInit } from '@angular/core';
 export class PollingComponent implements OnInit {
 
   title = 'labo.signalr.ng';
-  private hubConnection?: signalR.HubConnection;
-  usercount = 0;
   tasks: UselessTask[] = [];
   taskname: string = "";
 
   ngOnInit(): void {
-    this.connecttohub()
-  }
-
-  connecttohub() {
-    // TODO On doit commencer par créer la connexion vers le Hub
-
-    // TODO On se connecte au Hub
-
-    // TODO Une fois connectée, on peut commencer à écouter pour les évènements qui vont déclencher des callbacks
+    this.updateTasks();
   }
 
   complete(id: number) {
-    // TODO On invoke la méthode pour compléter une tâche sur le serveur
+    // TODO On invoke la méthode pour compléter une tâche sur le serveur (Contrôleur d'API)
   }
 
   addtask() {
-    // TODO On invoke la méthode pour ajouter une tâche sur le serveur
+    // TODO On invoke la méthode pour ajouter une tâche sur le serveur (Contrôleur d'API)
   }
 
-}
-
-
-export class UselessTask {
-  constructor(
-    public id: number,
-    public text: string,
-    public completed: boolean
-  ) { }
-
+  updateTasks() {
+    // TODO Utiliser le polling pour non seulement mettre la liste de tasks à jour, mais continuer de le faire chaque seconde
+  }
 }
