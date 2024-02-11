@@ -52,11 +52,4 @@ export class SignalrComponent implements OnInit {
     // TODO On invoke la méthode pour ajouter une tâche sur le serveur
     this.hubConnection!.invoke('AddTask', this.taskname);
   }
-
-
-});
-
-
-
-//this.hubConnection!.invoke('ConnectNewUser')
-
+}

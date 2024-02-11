@@ -14,13 +14,15 @@ import { FormsModule } from '@angular/forms';
 import { PollingComponent } from './polling/polling.component';
 import { SignalrComponent } from './signalr/signalr.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
-      PollingComponent,
-      SignalrComponent
+    PollingComponent,
+    SignalrComponent
    ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatInputModule,
     MatTabsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
