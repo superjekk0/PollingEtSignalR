@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UselessTask } from '../models/UselessTask';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-polling',
@@ -11,6 +12,8 @@ export class PollingComponent implements OnInit {
   title = 'labo.signalr.ng';
   tasks: UselessTask[] = [];
   taskname: string = "";
+
+  constructor(private http:HttpClient){}
 
   ngOnInit(): void {
     this.updateTasks();
