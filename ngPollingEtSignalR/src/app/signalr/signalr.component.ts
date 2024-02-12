@@ -22,6 +22,7 @@ export class SignalrComponent implements OnInit {
   connecttohub() {
     // TODO On doit commencer par créer la connexion vers le Hub
 
+    // TODO On doit ensuite se connecter
     // TODO Une fois connectée, on peut commencer à écouter pour les évènements qui vont déclencher des callbacks
   }
 

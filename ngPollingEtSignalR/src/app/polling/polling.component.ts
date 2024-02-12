@@ -25,6 +25,7 @@ export class PollingComponent implements OnInit {
   }
 
   updateTasks() {
-    // TODO Utiliser le polling pour non seulement mettre la liste de tasks à jour, mais continuer de le faire chaque seconde
+    // TODO: Faire une première implémentation simple avec un appel au serveur pour obtenir la liste des tâches
+    // TODO: UNE FOIS QUE VOUS AVEZ TESTER AVEC DEUX CLIENTS: Utiliser le polling pour mettre la liste de tasks à jour chaque seconde
   }
 }
